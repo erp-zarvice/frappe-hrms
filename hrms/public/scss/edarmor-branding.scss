@@ -1,0 +1,51 @@
+/* Edarmor HRMS Custom Branding */
+
+/* Custom brand colors */
+:root {
+  --edarmor-primary: #2563eb;
+  --edarmor-primary-dark: #1d4ed8;
+  --edarmor-secondary: #64748b;
+  --edarmor-accent: #10b981;
+}
+
+/* Custom logo styling */
+.navbar-brand img,
+.app-icon img,
+.logo img {
+  max-height: 32px;
+  width: auto;
+}
+
+/* Custom header branding */
+.navbar-brand::after {
+  content: " by Edarmor";
+  font-size: 12px;
+  color: var(--edarmor-secondary);
+  font-weight: 300;
+}
+
+/* Custom card styling for HRMS modules */
+.workspace .card-header {
+  background: linear-gradient(135deg, var(--edarmor-primary) 0%, var(--edarmor-primary-dark) 100%);
+  color: white;
+}
+
+/* Custom shortcut styling */
+.shortcut {
+  border: 1px solid var(--edarmor-primary);
+}
+
+.shortcut:hover {
+  background-color: var(--edarmor-primary);
+  color: white;
+}
+
+/* Footer branding */
+.footer::after {
+  content: "Powered by Edarmor Innovations";
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: var(--edarmor-secondary);
+  margin-top: 10px;
+}

@@ -1,8 +1,20 @@
 import { io } from "socket.io-client"
-import { socketio_port } from "../../../../sites/common_site_config.json"
+// import { socketio_port } from "../../../../sites/common_site_config.json"
 
 import { getCachedListResource } from "frappe-ui/src/resources/listResource"
 import { getCachedResource } from "frappe-ui/src/resources/resources"
+
+// Fallback socketio port configuration
+let socketio_port = 9000; // Default socketio port
+
+// Try to get socketio_port from window or fallback
+try {
+	if (window.socketio_port) {
+		socketio_port = window.socketio_port;
+	}
+} catch (e) {
+	// Fallback to default port
+}
 
 export function initSocket() {
 	let host = window.location.hostname

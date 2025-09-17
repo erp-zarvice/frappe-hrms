@@ -1,16 +1,16 @@
 {
   "private": true,
   "name": "hrms",
-  "description": "Open Source HR & Payroll System powered by the Frappe Framework",
+  "description": "Modern HR & Payroll System by Edarmor Innovations",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frappe/hrms.git"
+    "url": "git+https://github.com/erp-zarvice/frappe-hrms.git"
   },
-  "homepage": "https://frappe.io/hr",
-  "author": "Frappe Technologies Pvt. Ltd.",
+  "homepage": "https://edarmor.com/hr",
+  "author": "Edarmor Innovations Pvt. Ltd.",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/frappe/hrms/issues"
+    "url": "https://github.com/erp-zarvice/frappe-hrms/issues"
   },
   "aworkspaces": ["frontend", "roster", "frappe-ui"],
   "scripts": {

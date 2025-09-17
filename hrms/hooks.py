@@ -1,19 +1,19 @@
 app_name = "hrms"
-app_title = "Frappe HR"
-app_publisher = "Frappe Technologies Pvt. Ltd."
+app_title = "HRMS"
+app_publisher = "Edarmor Innovations Pvt. Ltd"
 app_description = "Modern HR and Payroll Software"
-app_email = "contact@frappe.io"
+app_email = "contact@edarmor.com"
 app_license = "GNU General Public License (v3)"
-required_apps = ["frappe/erpnext"]
-source_link = "http://github.com/frappe/hrms"
-app_logo_url = "/assets/hrms/images/frappe-hr-logo.svg"
+required_apps = [] # ["frappe/erpnext"]
+source_link = "https://github.com/erp-zarvice/frappe-hrms"
+app_logo_url = "/assets/hrms/images/edarmor-hr-logo.svg"
 app_home = "/app/overview"
 
 add_to_apps_screen = [
 	{
 		"name": "hrms",
-		"logo": "/assets/hrms/images/frappe-hr-logo.svg",
-		"title": "Frappe HR",
+		"logo": "/assets/hrms/images/edarmor-hr-logo.svg",
+		"title": "HRMS",
 		"route": "/app/overview",
 		"has_permission": "hrms.hr.utils.check_app_permission",
 	}
@@ -26,8 +26,9 @@ add_to_apps_screen = [
 # app_include_css = "/assets/hrms/css/hrms.css"
 app_include_js = [
 	"hrms.bundle.js",
+	"/assets/hrms/js/help_menu_customization.js"
 ]
-app_include_css = "hrms.bundle.css"
+app_include_css = ["hrms.bundle.css", "/assets/hrms/scss/edarmor-branding.scss"]
 
 # website
 
@@ -79,10 +80,27 @@ calendars = ["Leave Application"]
 # automatically create page for each record of this doctype
 website_generators = ["Job Opening"]
 
+# website_route_rules = [
+# 	{"from_route": "/hrms/<path:app_path>", "to_route": "hrms"},
+# 	{"from_route": "/hr/<path:app_path>", "to_route": "roster"},
+# ]
+
+# # Website configuration
 website_route_rules = [
-	{"from_route": "/hrms/<path:app_path>", "to_route": "hrms"},
-	{"from_route": "/hr/<path:app_path>", "to_route": "roster"},
+	{"from_route": "/frontend/<path:app_path>", "to_route": "frontend"},
 ]
+
+# App branding
+app_logo_url = "/assets/hrms/images/edarmor-hr-logo.png"
+website_context = {
+	"favicon": "/assets/hrms/images/favicon.ico",
+	"splash_image": "/assets/hrms/images/edarmor-hr-logo.png"
+}
+
+# Additional branding hooks
+app_include_css = "/assets/hrms/css/hrms.css"
+boot_session = "hrms.boot.boot_session"
+
 # Jinja
 # ----------
 
@@ -280,7 +298,7 @@ regional_overrides = {
 	},
 }
 
-# ERPNext doctypes for Global Search
+# ERP doctypes for Global Search
 global_search_doctypes = {
 	"Default": [
 		{"doctype": "Salary Slip", "index": 19},
