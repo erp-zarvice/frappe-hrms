@@ -50,7 +50,7 @@ def before_app_uninstall(app_name):
 
 
 def get_custom_fields():
-	"""HR specific custom fields that need to be added to the masters in ERPNext"""
+	"""HR specific custom fields that need to be added to the masters in ERP"""
 	return {
 		"Company": [
 			{

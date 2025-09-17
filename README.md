@@ -1,10 +1,10 @@
 <div align="center">
-	<a href="https://frappe.io/hr">
-		<img src=".github/frappe-hr-logo.png" height="80px" width="80px" alt="Frappe HR Logo">
+	<a href="https://edarmor.com">
+		<img src="hrms/public/images/edarmor-hr-logo.svg" height="80px" width="80px" alt="Edarmor HR Logo">
 	</a>
-	<h2>Frappe HR</h2>
+	<h2>Edarmor HR</h2>
 	<p align="center">
-		<p>Open Source, modern, and easy-to-use HR and Payroll Software</p>
+		<p>Open Source, modern, and easy-to-use HR and Payroll Software by Edarmor Innovations</p>
 	</p>
 
 [![CI](https://github.com/frappe/hrms/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/frappe/hrms/actions/workflows/ci.yml)
@@ -18,24 +18,25 @@
 </div>
 
 <div align="center">
-	<a href="https://frappe.io/hr">Website</a>
+	<a href="https://edarmor.com">Website</a>
 	-
-	<a href="https://docs.frappe.io/hr/introduction">Documentation</a>
+	<a href="https://docs.edarmor.com/hr">Documentation</a>
 </div>
 
-## Frappe HR
+## Edarmor HR
 
-Frappe HR has everything you need to drive excellence within the company. It's a complete HRMS solution with over 13 different modules right from Employee Management, Onboarding, Leaves, to Payroll, Taxation, and more!
+Edarmor HR is powered by Frappe's open-source framework and customized by Edarmor Innovations Pvt. Ltd. for enterprise needs. It has everything you need to drive excellence within the company. It's a complete HRMS solution with over 13 different modules right from Employee Management, Onboarding, Leaves, to Payroll, Taxation, and more!
 
 ## Motivation
-When Frappe team started growing in terms of size, we needed an open-source HR and Payroll software. We didn't find any "true" open-source HR software out there and so decided to build one ourselves.
-Initially, it was a set of modules within ERPNext but version 14 onwards, as the modules became more mature, Frappe HR was created as a separate product.
+When Edarmor Innovations team started growing in terms of size, we needed an open-source HR and Payroll software. We chose to build upon Frappe's excellent foundation and customize it for our enterprise clients' needs.
+
+This solution is based on Frappe HR, which initially was a set of modules within ERP but version 14 onwards, became a separate mature product. We've enhanced it with our enterprise expertise and branding.
 
 ## Key Features
 
 - **Employee Lifecycle**: From onboarding employees, managing promotions and transfers, all the way to documenting feedback with exit interviews, make life easier for employees throughout their life cycle.
 - **Leave and Attendance**: Configure leave policies, pull regional holidays with a click, check-in and check-out with geolocation capturing, track leave balances and attendance with reports.
-- **Expense Claims and Advances**: Manage employee advances, claim expenses, configure multi-level approval workflows, all this with seamless integration with ERPNext accounting.
+- **Expense Claims and Advances**: Manage employee advances, claim expenses, configure multi-level approval workflows, all this with seamless integration with ERP accounting.
 - **Performance Management**: Track goals, align goals with key result areas (KRAs), enable employees to evaluate themselves, make managing appraisal cycles easy.
 - **Payroll & Taxation**: Create salary structures, configure income tax slabs, run standard payroll, accomodate additional salaries and off cycle payments, view income breakup on salary slips and so much more.
 - **Frappe HR Mobile App**: Apply for and approve leaves on the go, check-in and check-out, access employee profile right from the mobile app.
@@ -52,9 +53,9 @@ Initially, it was a set of modules within ERPNext but version 14 onwards, as the
 
 ### Under the Hood
 
-- [**Frappe Framework**](https://github.com/frappe/frappe): A full-stack web application framework written in Python and Javascript. The framework provides a robust foundation for building web applications, including a database abstraction layer, user authentication, and a REST API.
+- [**Framework**](https://github.com/frappe/frappe): A full-stack web application framework written in Python and Javascript. The framework provides a robust foundation for building web applications, including a database abstraction layer, user authentication, and a REST API.
 
-- [**Frappe UI**](https://github.com/frappe/frappe-ui): A Vue-based UI library, to provide a modern user interface. The Frappe UI library provides a variety of components that can be used to build single-page applications on top of the Frappe Framework.
+- [**Frappe UI**](https://github.com/frappe/frappe-ui): A Vue-based UI library, to provide a modern user interface. The Frappe UI library provides a variety of components that can be used to build single-page applications on top of the Framework.
 
 ## Production Setup
 
@@ -108,9 +109,9 @@ Use the following credentials to log in:
 
 ## Learning and Community
 
-1. [Frappe School](https://frappe.school) - Learn Frappe Framework and ERPNext from the various courses by the maintainers or from the community.
+1. [Frappe School](https://frappe.school) - Learn Framework and ERP from the various courses by the maintainers or from the community.
 2. [Documentation](https://docs.frappe.io/hr) - Extensive documentation for Frappe HR.
-3. [User Forum](https://discuss.erpnext.com/) - Engage with the community of ERPNext users and service providers.
+3. [User Forum](https://discuss.erpnext.com/) - Engage with the community of ERP users and service providers.
 4. [Telegram Group](https://t.me/frappehr) - Get instant help from the community of users.
 
 
@@ -128,11 +129,8 @@ Please read our [Logo and Trademark Policy](TRADEMARK_POLICY.md).
 <br />
 <br />
 <div align="center" style="padding-top: 0.75rem;">
-	<a href="https://frappe.io" target="_blank">
-		<picture>
-			<source media="(prefers-color-scheme: dark)" srcset="https://frappe.io/files/Frappe-white.png">
-			<img src="https://frappe.io/files/Frappe-black.png" alt="Frappe Technologies" height="28"/>
-		</picture>
+	<a href="https://edarmor.com" target="_blank">
+		<img src="hrms/public/images/edarmor-hr-logo.svg" alt="Edarmor Innovations" height="28"/>
 	</a>
 </div>
 
