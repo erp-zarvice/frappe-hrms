@@ -8822,7 +8822,7 @@ msgid "Login Failed"
 msgstr ""
 
 #: frontend/src/views/Login.vue:8
-msgid "Login to Frappe HR"
+msgid "Login to HRMS"
 msgstr "Bei Frappe HR anmelden"
 
 #. Label of the longitude (Float) field in DocType 'Employee Checkin'

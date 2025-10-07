@@ -8844,8 +8844,8 @@ msgid "Login Failed"
 msgstr "Prijava nije uspjela"
 
 #: frontend/src/views/Login.vue:8
-msgid "Login to Frappe HR"
-msgstr "Prijavite se na Frappe HR"
+msgid "Login to HRMS"
+msgstr "Prijavite se na HRMS"
 
 #. Label of the longitude (Float) field in DocType 'Employee Checkin'
 #. Label of the longitude (Float) field in DocType 'Shift Location'

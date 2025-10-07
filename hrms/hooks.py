@@ -23,14 +23,12 @@ add_to_apps_screen = [
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/hrms/css/hrms.css"
+app_include_css = "/assets/hrms/css/hrms.css"
 app_include_js = [
-	"hrms.bundle.js",
-	"/assets/hrms/js/help_menu_customization.js"
-]
-app_include_css = ["hrms.bundle.css", "/assets/hrms/scss/edarmor-branding.scss"]
-
-# website
+        "hrms.bundle.js",
+        "/assets/hrms/js/help_menu_customization.js",
+        "/assets/hrms/js/logo_replacement.js"
+]# website
 
 # include js, css files in header of web template
 # web_include_css = "/assets/hrms/css/hrms.css"
@@ -98,7 +96,6 @@ website_context = {
 }
 
 # Additional branding hooks
-app_include_css = "/assets/hrms/css/hrms.css"
 boot_session = "hrms.boot.boot_session"
 
 # Jinja
