@@ -32,7 +32,7 @@ app_include_js = [
 
 # include js, css files in header of web template
 # web_include_css = "/assets/hrms/css/hrms.css"
-# web_include_js = "/assets/hrms/js/hrms.js"
+web_include_js = "/assets/hrms/js/logo_replacement.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "hrms/public/scss/website"
