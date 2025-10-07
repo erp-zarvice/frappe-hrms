@@ -19,6 +19,10 @@ services:
     command: bash /workspace/docker/init.sh
     environment:
       - SHELL=/bin/bash
+      - FRAPPE_BRANCH=${FRAPPE_BRANCH:-develop}
+      - ERPNEXT_BRANCH=${ERPNEXT_BRANCH:-develop}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - USE_SSH=${USE_SSH:-false}
     working_dir: /home/frappe
     volumes:
       - ..:/workspace/hrms  # Mount your local HRMS code

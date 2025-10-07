@@ -18,6 +18,26 @@ function replaceFrappeLogos() {
 		$('img[src*="/assets/erpnext/images/erpnext-logo.svg"]').attr('src', '/assets/hrms/images/edarmor-hr-logo.svg');
 		$('img[src*="erpnext-logo"]').attr('src', '/assets/hrms/images/edarmor-hr-logo.svg');
 
+        // Replace text: "Login to Frappe", "Login to ERPNext" with "Login to Edarmor HR"
+        $('h4, h1, h2, h3, h5, h6, p, span, div').each(function() {
+            const $elem = $(this);
+            // Only process if element has direct text content (not just child elements)
+            if ($elem.children().length === 0 || $elem.contents().filter(function() {
+                return this.nodeType === 3; // Text nodes
+            }).length > 0) {
+                let text = $elem.html();
+                if (text) {
+                    text = text.replace(/Login to Frappe/gi, 'Login to Edarmor HR');
+                    text = text.replace(/Login to ERPNext/gi, 'Login to Edarmor HR');
+                    text = text.replace(/Create a Frappe Account/gi, 'Create an Edarmor HR Account');
+                    text = text.replace(/Create an ERPNext Account/gi, 'Create an Edarmor HR Account');
+                    if (text !== $elem.html()) {
+                        $elem.html(text);
+                    }
+                }
+            }
+        });
+
         // Replace any background images
         $('[style*="frappe-framework-logo"]').each(function() {
             let style = $(this).attr('style');

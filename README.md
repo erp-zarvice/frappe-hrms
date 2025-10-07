@@ -77,11 +77,50 @@ It takes care of installation, setup, upgrades, monitoring, maintenance and supp
 
 ## Development setup
 ### Docker
-You need Docker, docker-compose and git setup on your machine. Refer [Docker documentation](https://docs.docker.com/). After that, run the following commands:
+You need Docker, docker-compose and git setup on your machine. Refer [Docker documentation](https://docs.docker.com/).
+
+#### For Private Repositories (Authentication Required)
+
+If the `erp-zarvice/frappe` and `erp-zarvice/erpnext` repositories are private, you need to set up authentication:
+
+**Step 1:** Create a GitHub Personal Access Token
+- Go to https://github.com/settings/tokens/new
+- Give it a name like "Docker Dev Environment"
+- Select scope: `repo` (Full control of private repositories)
+- Click "Generate token" and copy it
+
+**Step 2:** Set up environment
+```bash
+git clone https://github.com/erp-zarvice/frappe-hrms
+cd frappe-hrms/docker
+
+# Create .env file from example
+cp .env.example .env
+
+# Edit .env and add your token:
+# GITHUB_TOKEN=ghp_your_token_here
+nano .env
 ```
-git clone https://github.com/frappe/hrms
-cd hrms/docker
+
+**Step 3:** Start Docker
+```bash
 docker-compose up
+```
+
+#### For Public Repositories (No Authentication)
+
+```bash
+git clone https://github.com/erp-zarvice/frappe-hrms
+cd frappe-hrms/docker
+docker-compose up
+```
+
+**Note:** This will automatically install Frappe and ERPNext from the erp-zarvice repositories with Edarmor branding.
+
+**By default, it clones the `develop` branch** for both Frappe and ERPNext. To use a different branch:
+```bash
+# Edit .env file or set inline:
+FRAPPE_BRANCH=feature/whitelabeling ERPNEXT_BRANCH=develop docker-compose up
 ```
 
 Wait for some time until the setup script creates a site. After that you can access `http://localhost:8000` in your browser and the login screen for HR should show up.
@@ -93,19 +132,27 @@ Use the following credentials to log in:
 
 ### Local
 
-1. Set up bench by following the [Installation Steps](https://frappeframework.com/docs/user/en/installation) and start the server and keep it running
+1. Set up bench by following the [Installation Steps](https://frappeframework.com/docs/user/en/installation) with custom Frappe repository
 	```sh
+	# Initialize bench with custom Frappe repository
+	$ bench init --frappe-path https://github.com/erp-zarvice/frappe frappe-bench
+	$ cd frappe-bench
 	$ bench start
 	```
 2. In a separate terminal window, run the following commands
 	```sh
 	$ bench new-site hrms.local
-	$ bench get-app erpnext
-	$ bench get-app hrms
+	# Get ERPNext from custom repository
+	$ bench get-app https://github.com/erp-zarvice/erpnext
+	# Get HRMS from custom repository
+	$ bench get-app https://github.com/erp-zarvice/frappe-hrms
+	$ bench --site hrms.local install-app erpnext
 	$ bench --site hrms.local install-app hrms
 	$ bench --site hrms.local add-to-hosts
 	```
-3. You can access the site at `http://hrms.local:8080`
+3. You can access the site at `http://hrms.local:8000`
+
+**Note:** This setup uses the Edarmor-branded versions of Frappe, ERPNext, and HRMS from erp-zarvice organization.
 
 ## Learning and Community
 

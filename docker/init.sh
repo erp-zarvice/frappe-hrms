@@ -10,7 +10,28 @@ fi
 
 export PATH="${NVM_DIR}/versions/node/v${NODE_VERSION_DEVELOP}/bin/:${PATH}"
 
-bench init --skip-redis-config-generation frappe-bench
+# Configure Git authentication if GITHUB_TOKEN is provided
+if [ -n "$GITHUB_TOKEN" ]; then
+    echo "Configuring GitHub authentication..."
+    git config --global url."https://${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
+fi
+
+# Determine repository URLs based on USE_SSH setting
+if [ "$USE_SSH" = "true" ]; then
+    FRAPPE_REPO="git@github.com:erp-zarvice/frappe.git"
+    ERPNEXT_REPO="git@github.com:erp-zarvice/frappe-erpnext.git"
+    echo "Using SSH for Git operations"
+else
+    FRAPPE_REPO="https://github.com/erp-zarvice/frappe"
+    ERPNEXT_REPO="https://github.com/erp-zarvice/frappe-erpnext"
+    echo "Using HTTPS for Git operations"
+fi
+
+# Initialize bench with custom Frappe repository
+# Use FRAPPE_BRANCH environment variable or default to 'develop'
+FRAPPE_BRANCH=${FRAPPE_BRANCH:-develop}
+echo "Initializing with Frappe branch: ${FRAPPE_BRANCH}"
+bench init --skip-redis-config-generation --frappe-path ${FRAPPE_REPO} --frappe-branch ${FRAPPE_BRANCH} frappe-bench
 
 cd /home/frappe/frappe-bench
 
@@ -35,9 +56,11 @@ EOF
 sed -i '/redis/d' ./Procfile
 sed -i '/watch/d' ./Procfile
 
-# Get ERPNext (dependency for HRMS)
-echo "Getting ERPNext..."
-bench get-app erpnext
+# Get ERPNext from custom repository (dependency for HRMS)
+# Use ERPNEXT_BRANCH environment variable or default to 'develop'
+ERPNEXT_BRANCH=${ERPNEXT_BRANCH:-develop}
+echo "Getting ERPNext from erp-zarvice (branch: ${ERPNEXT_BRANCH})..."
+bench get-app --branch ${ERPNEXT_BRANCH} ${ERPNEXT_REPO}
 
 # Use local HRMS code (your development version)
 echo "Linking local HRMS development code..."
