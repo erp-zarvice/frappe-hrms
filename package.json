@@ -4,13 +4,13 @@
   "description": "Modern HR & Payroll System by Edarmor Innovations",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/erp-zarvice/frappe-hrms.git"
+    "url": "git+https://github.com/erp-zarvice/hrms.git"
   },
   "homepage": "https://edarmor.com/hr",
   "author": "Edarmor Innovations Pvt. Ltd.",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/erp-zarvice/frappe-hrms/issues"
+    "url": "https://github.com/erp-zarvice/hrms/issues"
   },
   "aworkspaces": ["frontend", "roster", "frappe-ui"],
   "scripts": {

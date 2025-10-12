@@ -64,8 +64,8 @@ section-order = [
 
 [project.urls]
 Homepage = "https://frappe.io/hr"
-Repository = "https://github.com/erp-zarvice/frappe-hrms.git"
-"Bug Reports" = "https://github.com/erp-zarvice/frappe-hrms/issues"
+Repository = "https://github.com/erp-zarvice/hrms.git"
+"Bug Reports" = "https://github.com/erp-zarvice/hrms/issues"
 
 
 [tool.bench.frappe-dependencies]

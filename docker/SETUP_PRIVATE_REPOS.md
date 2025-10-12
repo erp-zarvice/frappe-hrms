@@ -24,7 +24,7 @@ This means the repositories are **private** and require authentication.
 ### Step 2: Configure Your Environment
 
 ```bash
-cd frappe-hrms/docker
+cd hrms/docker
 
 # Create .env file
 cp .env.example .env
@@ -56,7 +56,7 @@ If these are meant to be open source:
 2. Scroll to "Danger Zone"
 3. Click "Change repository visibility"
 4. Select "Make public"
-5. Repeat for `erp-zarvice/erpnext` and `erp-zarvice/frappe-hrms`
+5. Repeat for `erp-zarvice/erpnext` and `erp-zarvice/hrms`
 
 Then no authentication is needed:
 ```bash
