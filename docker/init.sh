@@ -19,11 +19,11 @@ fi
 # Determine repository URLs based on USE_SSH setting
 if [ "$USE_SSH" = "true" ]; then
     FRAPPE_REPO="git@github.com:erp-zarvice/frappe.git"
-    ERPNEXT_REPO="git@github.com:erp-zarvice/frappe-erpnext.git"
+    ERPNEXT_REPO="git@github.com:erp-zarvice/erpnext.git"
     echo "Using SSH for Git operations"
 else
     FRAPPE_REPO="https://github.com/erp-zarvice/frappe"
-    ERPNEXT_REPO="https://github.com/erp-zarvice/frappe-erpnext"
+    ERPNEXT_REPO="https://github.com/erp-zarvice/erpnext"
     echo "Using HTTPS for Git operations"
 fi
 

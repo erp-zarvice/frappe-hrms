@@ -91,8 +91,8 @@ If the `erp-zarvice/frappe` and `erp-zarvice/erpnext` repositories are private, 
 
 **Step 2:** Set up environment
 ```bash
-git clone https://github.com/erp-zarvice/frappe-hrms
-cd frappe-hrms/docker
+git clone https://github.com/erp-zarvice/hrms
+cd hrms/docker
 
 # Create .env file from example
 cp .env.example .env
@@ -110,8 +110,8 @@ docker-compose up
 #### For Public Repositories (No Authentication)
 
 ```bash
-git clone https://github.com/erp-zarvice/frappe-hrms
-cd frappe-hrms/docker
+git clone https://github.com/erp-zarvice/hrms
+cd hrms/docker
 docker-compose up
 ```
 
@@ -145,7 +145,7 @@ Use the following credentials to log in:
 	# Get ERPNext from custom repository
 	$ bench get-app https://github.com/erp-zarvice/erpnext
 	# Get HRMS from custom repository
-	$ bench get-app https://github.com/erp-zarvice/frappe-hrms
+	$ bench get-app https://github.com/erp-zarvice/hrms
 	$ bench --site hrms.local install-app erpnext
 	$ bench --site hrms.local install-app hrms
 	$ bench --site hrms.local add-to-hosts
