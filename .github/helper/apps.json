@@ -1,5 +1,5 @@
 [
     {"url": "https://github.com/erp-zarvice/erpnext","branch": "version-15"},
-    {"url": "https://github.com/frappe/payments","branch": "version-15"},
+    {"url": "https://github.com/erp-zarvice/payments","branch": "version-15"},
     {"url": "https://github.com/erp-zarvice/hrms","branch": "version-15"}
 ]
