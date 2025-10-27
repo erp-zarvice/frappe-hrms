@@ -101,14 +101,14 @@ def set_default_hr_accounts(doc, method=None):
 	if frappe.local.flags.ignore_chart_of_accounts:
 		return
 
-	if not doc.default_payroll_payable_account:
+	if hasattr(doc, "default_payroll_payable_account") and not doc.default_payroll_payable_account:
 		payroll_payable_account = frappe.db.get_value(
 			"Account", {"account_name": _("Payroll Payable"), "company": doc.name, "is_group": 0}
 		)
 
 		doc.db_set("default_payroll_payable_account", payroll_payable_account)
 
-	if not doc.default_employee_advance_account:
+	if hasattr(doc, "default_employee_advance_account") and not doc.default_employee_advance_account:
 		employe_advance_account = frappe.db.get_value(
 			"Account", {"account_name": _("Employee Advances"), "company": doc.name, "is_group": 0}
 		)
@@ -117,7 +117,7 @@ def set_default_hr_accounts(doc, method=None):
 
 
 def validate_default_accounts(doc, method=None):
-	if doc.default_payroll_payable_account:
+	if hasattr(doc, "default_payroll_payable_account") and doc.default_payroll_payable_account:
 		for_company = frappe.db.get_value("Account", doc.default_payroll_payable_account, "company")
 		if for_company != doc.name:
 			frappe.throw(
