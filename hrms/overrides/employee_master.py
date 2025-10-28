@@ -87,12 +87,12 @@ def update_job_applicant_and_offer(doc, method=None):
 
 def update_approver_role(doc, method=None):
 	"""Adds relevant approver role for the user linked to Employee"""
-	if doc.leave_approver:
+	if hasattr(doc, "leave_approver") and doc.leave_approver:
 		user = frappe.get_doc("User", doc.leave_approver)
 		user.flags.ignore_permissions = True
 		user.add_roles("Leave Approver")
 
-	if doc.expense_approver:
+	if hasattr(doc, "expense_approver") and doc.expense_approver:
 		user = frappe.get_doc("User", doc.expense_approver)
 		user.flags.ignore_permissions = True
 		user.add_roles("Expense Approver")
